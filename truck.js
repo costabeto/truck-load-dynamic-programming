@@ -14,17 +14,20 @@ const newTruck = (index, product) => ({ index, products: [product] });
 let truckIndex = 0;
 
 while (sorted.length > 0) {
-  const totalWeight = trucks[truckIndex].products
-    .map((p) => p.weight)
-    .reduce((acc, curr) => Number(acc) + Number(curr), 0);
-  if (totalWeight + Number(sorted[0].weight) >= 40) {
-    truckIndex++;
-    trucks.push(newTruck(truckIndex, sorted[0]));
-    sorted.shift();
-  } else {
-    trucks[truckIndex].products.push(sorted[0]);
-    sorted.shift();
-  }
+  sorted.forEach((product, index) => {
+    const totalWeight = trucks[truckIndex].products
+      .map((p) => p.weight)
+      .reduce((acc, curr) => Number(acc) + Number(curr), 0);
+
+    if (totalWeight + Number(product.weight) > 40) {
+      truckIndex++;
+      trucks.push(newTruck(truckIndex, product));
+      sorted.splice(index, 1);
+    } else {
+      trucks[truckIndex].products.push(product);
+      sorted.splice(index, 1);
+    }
+  });
 }
 
 trucks.forEach((truck) => {
