@@ -1,0 +1,42 @@
+[
+  {
+    "name": "A",
+    "value": 150,
+    "weight": 10
+  },
+  {
+    "name": "B",
+    "value": 600,
+    "weight": 5
+  },
+  {
+    "name": "C",
+    "value": 800,
+    "weight": 25
+  },
+  {
+    "name": "D",
+    "value": 200,
+    "weight": 15
+  },
+  {
+    "name": "E",
+    "value": 700,
+    "weight": 20
+  },
+  {
+    "name": "F",
+    "value": 450,
+    "weight": 5
+  },
+  {
+    "name": "G",
+    "value": 900,
+    "weight": 10
+  },
+  {
+    "name": "H",
+    "value": 100,
+    "weight": 25
+  }
+]
